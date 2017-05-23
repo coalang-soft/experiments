@@ -1,0 +1,8 @@
+l4 java
+s16 java.lang.System
+c1
+g3 out
+g7 println
+s11 Hello World
+c1
+p
