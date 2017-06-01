@@ -1,0 +1,45 @@
+global action
+    java(
+        require String
+    ):
+    notrandom Java;
+global value 
+    add(
+        require Number, 
+        require Number
+    ):
+    notrandom Number;
+global value 
+    concat(
+        require String, 
+        optional
+    ):
+    notrandom String;
+global value 
+    sub(
+        require Number, 
+        require Number
+    ):
+    notrandom Number;
+global value 
+    array(
+        require
+    ):
+    notrandom Array;
+bound:Function action
+    for(
+        require Number, 
+        require Number:gtr parameter 1
+    ):
+    boundstate Array;
+bound:Function value
+    for(
+        require Number, 
+        require Number:leq parameter 1
+    ):
+    constant Array;
+bound:Function action
+    for(
+        require Array:not empty
+    ):
+    boundstate Array;
