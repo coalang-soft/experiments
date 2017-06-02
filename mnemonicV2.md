@@ -49,7 +49,16 @@ There is an interesting option I want to mention. Files contain characters - whi
 
 So an instruction with an integer parameter needs exactly 4 characters to be expressed completely. For instructions with a string parameter (only the one that adds a string to the global string map), there can be 2 parameters: a number (3 characters) and the string - which has exactly as many characters as specified (first parameter). This means the runtime can know how much space needs to be reserved **before** reading the data from the file, which can be great for machines with limited RAM.
 
-## Problem 2: Not smart
-There are a few ways to optimize the language. They use the [Static Runtime](./staticRuntime.md) model as their base:
+## Problem 2 and 3
+The second and and third problem are solved by applying the [Static Runtime concept](./staticRuntime.md) concept.
+
+## Transition
+There are three different ways for transitioning the runtime from the first version to the second of CoaLang Mnemonics:
+* Two different runtime / interpreter versions exist at the same time, the user has to say which one to use.
+* Two different runtime / interpreter versions exist, but the program decides if it is version one or two.
+* The runtime for version one is not supported anymore, but a compiler from version one to version two exists.
+
+I like version three the most, because we get the smallest runtime.
+## Going further
 
 WIP
