@@ -1,0 +1,97 @@
+#include <io/File>
+#include <Console>
+var in = File("F:/old2new.cc0");
+var String = java("java.lang.String");
+
+//Instructions without an argument
+var noArg = [
+	["pop", "p"],
+	["store", "S"],
+	["store1", "$"],
+	["putA", "a"],
+	["duplicate", "d"],
+	["newscope", "{"],
+	["oldscope", "}"],
+	["sPop", "-"],
+	["ret", "f"],
+	["nnr", "F"]
+];
+//Instructions with an integer argument
+var intArg = [
+	["invoke", "c"],
+	["putI", "i"],
+	["invoke1", "C"]
+];
+
+//Instructions with a string argument
+var strArg = [
+	["putS", "s"],
+	["get", "g"],
+	["load", "l"],
+	["reserve", "r"],
+	["sPut", "+"]
+];
+//putM m
+
+//Creates the short form of an instruction.
+//Parameter instruction: the long form
+//Returns the short form; undefined if instruction was not found
+def process(stringList, instruction){
+	var split = array(instruction.split(" "));
+	var instr = split.get(0);
+	var arg = String.join(" ", split.cut(1));
+	
+	if(instr == "putM"){
+		var f = File(arg);
+		var lines = array(f.buildString().split("\n"));
+		var short = process.bind(stringList).for(
+			<str|str.trim()>.for(lines)
+		);
+		"m" & 
+			short.length().toString() &
+			" " & String.join("", short)
+	}
+	
+	for(noArg){
+		var (a,b) = @.get(0);
+		if(a == instr){
+			b
+		}
+	}
+	
+	for(strArg){
+		var (a,b) = @.get(0);
+		if(a == instr){
+			if(stringList.indexOf(arg) < 0){
+				stringList.push(arg);
+			}
+			b & stringList.indexOf(arg).toString() & " "
+		}
+	}
+
+	for(intArg){
+		var (a,b) = @.get(0);
+		if(a == instr){
+			b & arg & " "
+		}
+	}
+	
+	println(instr);
+}
+
+def main(){
+	var instructions = array(in.buildString().split("\n"));
+	var stringList = [];
+
+	var shortVersion = String.join("",process.bind(stringList).for(
+		<s|s.trim()>.for(instructions)
+	));
+	var shortStringList = String.join("",<s|"@" & s.length().toString() & " " & s>.for(stringList));
+	
+	var result = shortStringList & shortVersion;
+	
+	println(result);
+	File("out.txt").writeString(result);
+}
+
+main();
