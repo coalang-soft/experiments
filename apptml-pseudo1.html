@@ -1,0 +1,30 @@
+<head>
+    <title>My nice app!</title>
+    
+    <!-- which languages and frameworks are used -->
+    <apptml-lib name="coa0.5"></apptml-lib>
+    <apptml-lib name="suitefx"></apptml-lib>
+    
+    <!-- framework to launch the app with -->
+    <apptml-launcher name="suitefx"></apptml-launcher>
+</head>
+<body>
+    
+    <!-- only evaluated on AppTML platform -->
+    <apptml-suitefx name="Editor">
+        <suitefx-menu text="Editor">
+            <suitefx-menu text="Say Hello :)" action="sayHello();"></suitefx-menu>
+        </suitefx-menu>
+    </apptml-suitefx>
+    
+    <!-- normal HTML -->
+    <textarea id="editor"></textarea>
+    <script type="text/javascript">
+        
+        function sayHello(){
+            document.getElementById("editor").innerHTML = "Hello World!";
+        }
+        
+    </script>
+</body>
+<!-- Works on browsers normally -->
