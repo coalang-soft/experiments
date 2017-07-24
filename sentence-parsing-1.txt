@@ -1,0 +1,34 @@
+Send a message to Tim
+Send 		:	action
+message		:	main object
+Tim		:	parameter
+
+message.send(Tim);
+
+Send the message Hello World to Tim
+Send 		:	action
+message		:	main object
+Hello World	:	main object parameter
+Tim		:	parameter
+
+message(Hello World).send(Tim);
+
+A: action
+M: main object
+I: main object parameter
+P: action parameter
+
+Send a message to Tim: A a M to P
+message.send(Tim)
+
+Send the message Hello World to Tim: A the MI to P
+message(Hello World).send(Tim)
+
+Calculate 1 + 5: AP
+calculate(1 + 5)
+
+Print the document test.txt: A the MI
+document(test.txt).print()
+
+Search the documents from yesterday: A the MI
+documents(from yesterday).search()
