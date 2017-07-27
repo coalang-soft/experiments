@@ -1,0 +1,16 @@
+#use "java.lang.System" .out .err .in out .print, read from Console
+#use JUI .control .layout .FileChooser, Launcher .launch
+
+//same as:
+import java.lang.System;
+var out = System.out;
+var err = System.err;
+var in = System.in;
+var print = out.print;
+#include ccl/std/Console.cl2
+#include ccl/jui/JUI.cl2
+var control = JUI.control;
+var layout = JUI.layout;
+var FileChooser = JUI.FileChooser;
+#include ccl/jui/Launcher.cl2
+var launch = Launcher.launch;
