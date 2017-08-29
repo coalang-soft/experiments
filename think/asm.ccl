@@ -1,0 +1,28 @@
+#use Console
+
+def b(){
+    asm{
+        __println_f
+        load read
+        __invoke0
+        get trim
+        __invoke0
+        get property
+        load a
+        __invoke1
+        __invoke0
+        get split
+        putS  \
+        __invoke1
+        get 0
+        __invoke1
+    }
+}
+
+asm{
+    load read
+    __invoke0
+    __mkvar a
+    load b
+    __whiletrue
+}
