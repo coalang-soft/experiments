@@ -1,0 +1,6 @@
+#use Console
+
+var action = read();
+while(true){
+    println(read().trim()[action]().split(" ").0);
+}
