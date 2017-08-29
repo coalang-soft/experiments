@@ -1,0 +1,11 @@
+#use Console
+#alias <- then
+#literal : #"%s"#
+#literal # unbind(%s)
+#snippet forever\s+(.+) while(true){%1$s;}
+
+def then(a,b) = a(b());
+def unbind(prop,args...) = {|holder| return holder[prop].invoke(args);};
+
+var a = read();
+forever println <- :0: <- #"split"," "# <- #a# <- :trim: <- read;
