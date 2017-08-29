@@ -1,0 +1,25 @@
+#use prototypes Console
+
+def then(a,b,args...) = {||
+    if(b.type == "string"){
+        b = unbind(b,args);
+    }
+    return b(a());
+};
+
+def field(a,b) = {||return a[b];};
+
+prototypes.object.setProperty("out", println);
+prototypes.object.setProperty("forever", {|self| while(true){self();}});
+prototypes.object.setProperty("then", then);
+prototypes.object.setProperty("field", field);
+
+def unbind(prop,args) = {|holder| return holder[prop].invoke(args);};
+
+read
+    .then("trim")
+    .then(read())
+    .then("split", " ")
+    .then("0")
+    .then(println)
+    .forever();
