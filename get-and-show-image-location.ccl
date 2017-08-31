@@ -1,0 +1,28 @@
+#use URL Json
+
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
+//bild bzw. datei holen
+var chooser = JFileChooser();
+chooser.showOpenDialog(undefined);
+var file = chooser.getSelectedFile();
+
+//ortsdaten
+var image = java("javaxt.io.Image")(file);
+var coordinate = image.getGPSCoordinate();
+var lon = coordinate.0;
+var lat = coordinate.1;
+
+//ortsinfos aus dem internet
+var url = "https://nominatim.openstreetmap.org/reverse?format=json&lat=" & lat.toString() & "&lon=" & lon.toString();
+url = URL(url);
+var title = eval.json(url.buildString("UTF-8")).display_name;
+
+//karte laden
+url = "http://geomap.nagvis.org/?module=map&&lat=" & lat.toString() & "&lon=" & lon.toString() & "&zoom=7&width=600&height=600";
+image = ImageIO.read(URL(url).reader());
+image = ImageIcon(image);
+JOptionPane.showMessageDialog(undefined, image, title, 0);
