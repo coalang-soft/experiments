@@ -1,0 +1,7 @@
+3 ;Comment for value 3
+x.(3*x+4) ;Function with parameter x
+x.(3*x+4) (2*a) ;Invoke "3*x+4" with "2*a"
+(y.(y→x(3*x))) ;rename y to x
+(2*3)→x(x*5) ;x filled with "2*3"
+
+m=(x.(y.(x*y))) ;Variable
