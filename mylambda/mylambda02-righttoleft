@@ -1,7 +1,13 @@
-Comment for value 3; 3
-Function with parameter x; x.3*x+4
-Invoke "3*x+4" with "2*a"; (x.3*x+4) 2*a
-rename y to x; y.(y→x)3*x
-x filled with "2*3"; (x→2*3)x*5
+Comment for value 3;
+  3
+Function with parameter x;
+  x.3*x+4
+Invoke "3*x+4" with "2*a";
+  (x.3*x+4) 2*a
+rename y to x;
+  y.(y→x)3*x
+x filled with "2*3";
+  (x→2*3)x*5
 
-Variable; m=x.y.x*y
+Variable;
+  m=x.y.x*y
