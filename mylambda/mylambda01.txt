@@ -1,0 +1,8 @@
+"Descriptive comment for value 3" 3
+"Function indicated by →" → x: 3 * x + 4
+(→x:3*x+4)(2*a)
+"x filled with (2*3)" x*5[x←2*3]
+"rename y to x" (→y:3*x[x←y])
+
+"Short way for many parameters" →x,y:x*y
+"Variable" m=→x:→y:x*y
