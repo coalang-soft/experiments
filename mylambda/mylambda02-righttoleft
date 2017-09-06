@@ -5,7 +5,7 @@ Function with parameter x;
 Invoke "3*x+4" with "2*a";
   (x.3*x+4) 2*a
 rename y to x;
-  y.(y→x)3*x
+  y.(x→y)3*x
 x filled with "2*3";
   (x→2*3)x*5
 
