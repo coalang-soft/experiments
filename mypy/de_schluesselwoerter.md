@@ -25,4 +25,23 @@ Das zweite Beispiel definiert eine Konstante. Das ist einer der wenigen Fälle, 
 Das dritte Beispiel definiert einen Datentyp namens `UpperCamelCase`. Wichtig hier: der Name muss mit einem Großbuchstaben beginnen.
 Auf der ersten Einrückungsstufe stehen Felder, in dem Fall `firstField` und `secondField`. Eine tiefere Einrückung ist hier nicht erlaubt.
 
-WIP
+### Anonyme Funktionen
+Eine anonyme Funktion kann so erstellt werden:
+```
+def
+    4
+```
+Das ist eine Funktion, die 4 zurück gibt. Der einzige Unterschied zu benannten Funktionen ist, dass kein Name angegeben ist. Zu beachten
+ist, dass die 4 sich nicht auf der ersten Einrückungsstufe befindet - dann würde sie einen Parameter beschreiben - so ist sie der Rückgabewert. Die oben geschriebene Funktion ist gleichbedeutend mit `def::4`.
+## where
+`where` ist das zweite Schlüsselwort, und es wird seltener als `def` gebraucht. `where` erweitert die Möglichkeiten, Parameter zu beschreiben. Folgende Möglichkeiten existieren dafür:
+```
+def f
+  a
+  <9
+  b where a<b
+    a+b
+```
+Der erste Parameter ist ein benannter Parameter ohne Bedingung, der zweite ist ein unbenannter Parameter mit Bedingung. Diese beiden
+Fälle sind ohne `where` möglich. Aber wenn ein benannter Parameter mit Bedingung gebraucht wird, geht das nur mit `where`. Der Name
+des Parameters steht davor, die Bedingung danach. In der Bedingung muss der Parameter nicht vorne stehen.
