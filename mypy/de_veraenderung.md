@@ -26,6 +26,7 @@ def b:n:a:0
 Wir definieren hier die Funktion a, die b aufruft. Und b, die a aufruft. Wenn wir nach den Regeln von oben das Programm auswerten, sieht das so aus:
 * Die Funktion a braucht die Funktion b. b ist nicht definiert. a kann also auch nicht definiert werden.
 * Die Funktion b braucht die Funktion a. a ist nicht definiert (da b nicht definiert ist). b kann also auch nicht definiert werden.
+
 Das bedeutet: Obwohl eigentlich beide Funktionen problemlos genutzt werden könnten, werden sie nicht definiert. Die Lösung dafür kennt
 im Grunde jeder C++ Programmierer: Funktionsprototypen. Beschreibungen der Funktionen, die vor ihrer Definition erstellt werden. In MyPy
 werden diese aber automatisch erstellt. Sie könnten folgende Bedeutung haben:
