@@ -87,4 +87,5 @@ def f(n){
   }
 }
 ```
-WIP
+Wichtige Dinge hierbei: Erstens wird der Klon des Parameter-Arrays nur erstellt, wenn er wirklich gebraucht wird, um Zeit zu sparen.
+Zweitens endet jeder der Funktionsteile entweder mit einem `return`, oder mit `continue;`. Würde das continue fehlen, hätte die Funktion einen komplett anderen Effekt, wenn noch weitere Parameterbedingungen folgen die übereinstimmen.
