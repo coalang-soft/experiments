@@ -15,7 +15,7 @@ Es gibt zwei Arten von Operatoren, die die einen operanden und die die zwei oper
 * `!` ist nicht gleich
 * `...` Array von...bis
 ## Einer-Operatoren
-* `+/` `-/` `*/` `//` usw: Anwenden eines Zweier-Operators für alle Elemente eines Arrays. `1,2,3+/` ist `7`, `1,2,3,/` ist weiterhin `1,2,3`.
+* `+/` `-/` `*/` `//` usw: Anwenden eines Zweier-Operators für alle Elemente eines Arrays. `1,2,3+/` ist `6`, `1,2,3,/` ist weiterhin `1,2,3`.
 * `~-` abrunden / integer-cast
 * `~+` aufrunden
 * `~~` runden
