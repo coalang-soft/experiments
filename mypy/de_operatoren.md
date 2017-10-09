@@ -14,6 +14,7 @@ Es gibt zwei Arten von Operatoren, die die einen operanden und die die zwei oper
 * `=` ist gleich
 * `!` ist nicht gleich
 * `...` Array von...bis
+* `?` Zufällige Einträge aus Array auswählen. `3?4,7` wählt 3 mal einen Eintrag aus (entweder 3 oder 7)
 ## Einer-Operatoren
 * `+/` `-/` `*/` `//` usw: Anwenden eines Zweier-Operators für alle Elemente eines Arrays. `+/1,2,3` wäre `6`, `,/1,2,3` wäre weiterhin `1,2,3`.
 * `~-` abrunden / integer-cast
