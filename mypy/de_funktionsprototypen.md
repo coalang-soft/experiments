@@ -24,4 +24,15 @@ Das bedeutet, dass jeder der (durch Parameterbeschreibungen getrennten) Funktion
 
 ### Optimierbarkeit
 In [diesem](https://github.com/coalang-soft/experiments/blob/master/mypy/de_rekursionsoptimierung.md) Dokument wird erklärt, wie Rekursion optimiert werden kann.
-WIP
+Entsprechend würde es Sinn ergeben in den Funktionsprototypen festzuhalten, mit welchem Funktionsaufruf ein Funktionsteil endet (falls das so ist). Dadurch können auch mehrere Funktionsteile zu einem zusammen gefasst werden, falls das dann besser optimierbar ist.
+```
+def x::y:
+def y::x:
+```
+Das könnte zu einer Funktion optimiert werden, die dann mit einem Aufruf von x (bzw. y) enden würde.
+
+Am Ende würden die Funktionsprototypen vom aller ersten Beispiel dann also folgenden Inhalt haben:
+```
+1. Funktionsteil von a nutzt (b) und endet mit Aufruf von b
+1. Funktionsteil von b nutzt (a) und endet mit Aufruf von a
+```
