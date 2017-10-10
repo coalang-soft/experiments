@@ -17,10 +17,10 @@ Außerdem kann diese Angabe darüber, was funktioniert und was nicht, auch sehr 
 von Interpretern, Compilern, IDEs und weiteren Entwicklungswerkzeugen genutzt werden, um sinnvolle Hinweise zu nicht funktionierendem oder
 verbesserungswürdigem Code zu geben. Typangaben sind hier eine Angabe, die sich das Entwicklungswerkzeug nicht selbst "herleiten" muss.
 
-## Klassische Ansätze
+## Ansätze
 ### Klassen
 Klassen bieten eine Möglichkeit, Typen mit einem Namen und mehreren Eigenschaften zu definieren. Der Name kann dann als Typangabe
-genutzt werden. Dieser Ansatz bietet alle Vorteile, die unter "Vorteile mit Typangaben" genannt werden - aber auch entscheidende
+genutzt werden. Dieser Ansatz bietet alle Vorteile, die unter "Vorteile mit Typangaben" genannt werden, und eine recht gute Lesbarkeit, wenn die Klassen gut benannt sind - aber auch entscheidende
 Nachteile. Folgendes Beispiel (in Java) funktioniert beispielsweise:
 
 ```
