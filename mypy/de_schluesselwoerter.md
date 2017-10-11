@@ -51,7 +51,9 @@ des Parameters steht davor, die Bedingung danach. In der Bedingung muss der Para
 ```
 def f
   a where #firstName,#lastName>>>a length=2
-    #firstName," ",#lastName>>>a,/
+    #firstName>>>a," ",
+    #lastName>>>a
+    ,/
 ```
 Diese Funktion erwartet ein Objekt mit den Eigenschaften `firstName` und `lastName`. Sie fügt Vor- und Nachnamen der Person zum vollen
 Namen zusammen.
