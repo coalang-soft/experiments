@@ -1,7 +1,7 @@
 Es gibt zwei Arten von Operatoren, die die einen operanden und die die zwei operanden erwarten.
 ## Zweier-Operatoren
 * `+` addition
-* `-` subtraktion
+* `\` subtraktion (nicht `-`, das ist das negative Vorzeichen)
 * `*` multiplikation
 * `/` division
 * `^` hoch
@@ -15,6 +15,7 @@ Es gibt zwei Arten von Operatoren, die die einen operanden und die die zwei oper
 * `!` ist nicht gleich
 * `...` Array von...bis
 * `?` Zufällige Einträge aus Array auswählen. `4,7?3` wählt 3 mal einen Eintrag aus (entweder 4 oder 7)
+* ` ` (Leerzeichen) Funktion mit Parameter aufrufen. `3 f` ruft `f` mit dem Parameter `3` auf.
 ## Einer-Operatoren
 * `+/` `-/` `*/` `//` usw: Anwenden eines Zweier-Operators für alle Elemente eines Arrays. `1,2,3+/` wäre `6`, `1,2,3,/` wäre weiterhin `1,2,3`.
 * `~-` abrunden / integer-cast
@@ -43,4 +44,4 @@ Die oben genannten Operatoren ergeben zwar hoffentlich für sich Sinn, aber kön
 * Ist ein Operand eines Zweier-Operators eine Liste und der andere nicht, wird der andere als Liste mit einem Element angesehen.
 * Sind beide Operanden eines Zweier-Operators eine Liste, wird bei ungleicher Länge die kürzere von beiden auf die Länge der längeren gebracht, indem ihre Elemente wiederholt werden.
 * Wird ein Operator, der keine Liste erwartet, mit Listen als Operanden genutzt, wird er für jedes Paar aus Listeneinträgen angewendet. Der n-te Wert aus der ersten Operandenliste und der n-te Wert aus der zweiten Oparandenliste werden dafür als Operanden verwendet. `[1,2,3]*[4,5,6]` wäre `[1*4,2*5,3*6]`. Das Ergebnis ist immer eine Liste mit der Länge der längeren Operanden-Liste.
-* Wird ein Operator mit mindestens einer Funktion `in` genutzt, ist das Ergebnis ebenfalls eine Funktion. Diese wandelt falls nötig die Funktionen `in` um, indem sie sie mit ihren eigenen Parametern aufruft. Auf die Ergebniswerte wird der ursprüngliche Oparator angewendet. Sinngemäß ist also `function f+function x` `function(args) = f(args)+x(args)`, und `function l/8` `function(args) = l(args)/8`.
+* Wird ein Operator mit mindestens einer Funktion `in` genutzt, obwohl an dieser Stelle keine Funktion erwartet wird, ist das Ergebnis ebenfalls eine Funktion. Diese wandelt falls nötig die Funktionen `in` um, indem sie sie mit ihren eigenen Parametern aufruft. Auf die Ergebniswerte wird der ursprüngliche Oparator angewendet. Sinngemäß ist also `function f+function x` `function(args) = f(args)+x(args)`, und `function l/8` `function(args) = l(args)/8`.
