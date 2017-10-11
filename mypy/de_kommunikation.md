@@ -1,0 +1,18 @@
+Kommunikation zwischen Programmteilen (Objekten) ist die Grundlage von Objektorientierung, nicht Klassen usw.
+## Ablauf der Kommunikation
+Objekte (in MyPy ist jeder Wert ein Objekt) können Nachrichten (ein beliebiges Objekt kann eine Nachricht sein) empfangen. Ein Objekt
+kann auf Grundlage der empfangenden Nachricht tun was es möchte. Die Reaktion auf eine Nachricht wird in MyPy 
+durch die Methode `receive` eines Objektes beschrieben. `receive` bekommt beim Eingehen einer Nachricht auch mitgeteilt, wer die Nachricht
+gesendet hat. Sollte es sinnvoll sein, kann diese Methode eine kurze Rückmeldung liefern, wie die Nachricht verarbeitet wurde.
+Es kann natürlich vorkommen, dass ein Objekt mit einer Nachricht nicht sinnvoll
+umgehen kann. Wenn das der Fall ist, kann man sich das Senden weiterer Nachrichten, die auf die vorherige aufbauen, sparen. Ob ein Objekt
+mit einer Nachricht umgehen kann, kann über seine Methode `accepts` herausgefunden werden.
+Das Objekt kann - nachdem es die Nachrichten zu Ende empfangen hat - auch auf sie antworten. Die Antwort kann wieder ein beliebiges
+Objekt sein. Die Antwort kann über `answer` erfragt werden.
+
+Die Kommunikation besteht also aus "kanst du ..." (ja/nein), "mach ..." (zwischenbericht) und "was ist das Ergebnis?" (ergebnis).
+Da ein Objekt mit mehreren anderen Objekten gleichzetig kommunizieren kann, muss es sich merken, was wer gefragt hat, um sinnvoll antworten
+zu können. Am Ende der Kommunikation können diese germerkten Daten wieder vergessen werden. Über die Methode `disconnect` wird die aktuelle
+Kommunikation beendet.
+
+WIP
