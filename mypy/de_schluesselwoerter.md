@@ -1,13 +1,14 @@
-Schlüsselwörter gibt es in MyPy zwar, aber nur wenige. Genauer gesagt zwei, die hier beschrieben werden.
-## def
-`def` definiert etwas. Damit können Funktionen, Konstanten oder Datentypen definiert werden:
+Schlüsselwörter gibt es in MyPy zwar, aber nur wenige. Sie werden hier beschrieben.
+## def und let
+`def` definiert Funktionen und Datentypen, `let` definiert Konstanten:
 ```
 def lowerCamelCase
   parameter
   second
     parameter+second
 
-def writtenAsYouWant=value
+let writtenAsYouWant
+  value
 
 def UpperCamelCase
   firstField
@@ -19,7 +20,7 @@ spezielle Bedingungen. Es kann auch mehrere Parameterbeschreibungen geben, es wi
 Auf der zweiten Einrückungsstufe steht dann, was die Funktion in dem Fall, dass die Parameterbeschreibung mit den übergebenen Parametern
 überein stimmt, tun soll. In diesem Fall hier ist das `parameter+second`, also die Parameter zusammen zählen.
 
-Das zweite Beispiel definiert eine Konstante. Das ist einer der wenigen Fälle, wo keine Einrückungen nötig sind. Der Name ist 
+Das zweite Beispiel definiert eine Konstante. Der Name ist 
 `writtenAsYouWant`, der Wert ist `value`.
 
 Das dritte Beispiel definiert einen Datentyp namens `UpperCamelCase`. Wichtig hier: der Name muss mit einem Großbuchstaben beginnen.
@@ -34,7 +35,7 @@ def
 Das ist eine Funktion, die 4 zurück gibt. Der einzige Unterschied zu benannten Funktionen ist, dass kein Name angegeben ist. Zu beachten
 ist, dass die 4 sich nicht auf der ersten Einrückungsstufe befindet - dann würde sie einen Parameter beschreiben - so ist sie der Rückgabewert. Die oben geschriebene Funktion ist gleichbedeutend mit `def::4`.
 ## where
-`where` ist das zweite Schlüsselwort, und es wird seltener als `def` gebraucht. `where` erweitert die Möglichkeiten, Parameter zu beschreiben. Folgende Möglichkeiten existieren dafür:
+`where` erweitert die Möglichkeiten, Parameter zu beschreiben. Folgende Möglichkeiten existieren dafür:
 ```
 def f
   a
@@ -45,3 +46,12 @@ def f
 Der erste Parameter ist ein benannter Parameter ohne Bedingung, der zweite ist ein unbenannter Parameter mit Bedingung. Diese beiden
 Fälle sind ohne `where` möglich. Aber wenn ein benannter Parameter mit Bedingung gebraucht wird, geht das nur mit `where`. Der Name
 des Parameters steht davor, die Bedingung danach. In der Bedingung muss der Parameter nicht vorne stehen.
+
+### Eigenschaften erwarten
+```
+def f
+  a where #firstName,#lastName>>>a length=2
+    #firstName," ",#lastName>>>a,/
+```
+Diese Funktion erwartet ein Objekt mit den Eigenschaften `firstName` und `lastName`. Sie fügt Vor- und Nachnamen der Person zum vollen
+Namen zusammen.
