@@ -7,12 +7,16 @@ gesendet hat. Sollte es sinnvoll sein, kann diese Methode eine kurze Rückmeldun
 Es kann natürlich vorkommen, dass ein Objekt mit einer Nachricht nicht sinnvoll
 umgehen kann. Wenn das der Fall ist, kann man sich das Senden weiterer Nachrichten, die auf die vorherige aufbauen, sparen. Ob ein Objekt
 mit einer Nachricht umgehen kann, kann über seine Methode `accepts` herausgefunden werden.
-Das Objekt kann - nachdem es die Nachrichten zu Ende empfangen hat - auch auf sie antworten. Die Antwort kann wieder ein beliebiges
-Objekt sein. Die Antwort kann über `answer` erfragt werden.
 
-Die Kommunikation besteht also aus "kanst du ..." (ja/nein), "mach ..." (zwischenbericht) und "was ist das Ergebnis?" (ergebnis).
-Da ein Objekt mit mehreren anderen Objekten gleichzetig kommunizieren kann, muss es sich merken, was wer gefragt hat, um sinnvoll antworten
-zu können. Am Ende der Kommunikation können diese germerkten Daten wieder vergessen werden. Über die Methode `disconnect` wird die aktuelle
-Kommunikation beendet.
+Die Kommunikation besteht also aus "kanst du ..." (ja/nein) und "mach ..." (zwischenbericht).
+Da ein Objekt mit mehreren anderen Objekten gleichzetig kommunizieren kann, muss es sich merken, was wer gefragt hat, um sinnvoll antworten zu können. Am Ende der Kommunikation können diese germerkten Daten wieder vergessen werden. Über die Methode `disconnect` wird die aktuelle Kommunikation beendet.
 
-WIP
+## Abkapseln der Kommunikationsschritte
+In der Praxis ist es nicht Sinnvoll, die oben beschriebenen für den Programmierer sichtbar zu machen. `receive` zum Beispiel sollte nur
+genutzt werden, wenn das empfangende Objekt mit einer Nachricht umgehen kann - das wäre nicht mehr sicher gestellt.
+Es ist also sinnvoll, den gesamten Kommunikations-Prozess abzukapseln. Über die Methode `broadcast` eines Objektes können beliebig viele Nachrichten an ein Objekt gesendet werden. Der Aufruf von `receive` und `accepts` passiert automatisch. Die
+Rückmeldungen von `receive` können automatisch an das sendende Objekt weiter geleitet werden.
+
+## Nachrichten-Objekte
+Objekte können Eigenschaften haben. Es kann sinnvoll sein, Zugriff auf diese Eigenschaften zu haben. Dafür gibt es Nachrichten-Objekte.
+Mit `#abc` hat man ein Nachrichten-Objekt, dass die Eigenschaft `abc` des Empfängers  anfragt.
