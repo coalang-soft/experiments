@@ -15,7 +15,10 @@ Da ein Objekt mit mehreren anderen Objekten gleichzetig kommunizieren kann, muss
 In der Praxis ist es nicht Sinnvoll, die oben beschriebenen für den Programmierer sichtbar zu machen. `receive` zum Beispiel sollte nur
 genutzt werden, wenn das empfangende Objekt mit einer Nachricht umgehen kann - das wäre nicht mehr sicher gestellt.
 Es ist also sinnvoll, den gesamten Kommunikations-Prozess abzukapseln. Über die Methode `broadcast` eines Objektes können beliebig viele Nachrichten an ein Objekt gesendet werden. Der Aufruf von `receive` und `accepts` passiert automatisch. Die
-Rückmeldungen von `receive` können am Ende des Sendens als Liste zurück gegeben werden.
+Rückmeldungen von `receive` können am Ende des Sendens als Liste zurück gegeben werden. Diese Liste hat maximal so viele elemente, wie es
+Anfragen gab. Sollte jedoch eine Anfrage nicht akzeptiert worden sein, endet die Liste davor. `1,2>>>3` ist nur dann eine Liste mit 2
+Elementen, wenn `3` die Nachrichten `1` und `2` akzeptiert. Wenn die 1 akzeptiert wird und die 2 nicht, hat die Ergebnisliste nur ein
+Element, die Reaktion auf `1`. Wenn die 1 nicht akzeptiert wird hat die Ergebnisliste kein Element, auch nicht wenn `2` akzeptiert würde.
 
 ## Nachrichten-Objekte
 Objekte können Eigenschaften haben. Es kann sinnvoll sein, Zugriff auf diese Eigenschaften zu haben. Dafür gibt es Nachrichten-Objekte.
