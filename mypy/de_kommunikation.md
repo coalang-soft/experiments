@@ -15,11 +15,12 @@ Da ein Objekt mit mehreren anderen Objekten gleichzetig kommunizieren kann, muss
 In der Praxis ist es nicht Sinnvoll, die oben beschriebenen für den Programmierer sichtbar zu machen. `receive` zum Beispiel sollte nur
 genutzt werden, wenn das empfangende Objekt mit einer Nachricht umgehen kann - das wäre nicht mehr sicher gestellt.
 Es ist also sinnvoll, den gesamten Kommunikations-Prozess abzukapseln. Über die Methode `broadcast` eines Objektes können beliebig viele Nachrichten an ein Objekt gesendet werden. Der Aufruf von `receive` und `accepts` passiert automatisch. Die
-Rückmeldungen von `receive` können automatisch an das sendende Objekt weiter geleitet werden.
+Rückmeldungen von `receive` können am Ende des Sendens als Liste zurück gegeben werden.
 
 ## Nachrichten-Objekte
 Objekte können Eigenschaften haben. Es kann sinnvoll sein, Zugriff auf diese Eigenschaften zu haben. Dafür gibt es Nachrichten-Objekte.
-Mit `#abc` hat man ein Nachrichten-Objekt, dass die Eigenschaft `abc` des Empfängers  anfragt.
+Mit `#abc` hat man ein Nachrichten-Objekt, dass die Eigenschaft `abc` des Empfängers  anfragt. 
+Mögliche schreibweisen sind `#xyz>>>7`, `7.xyz` und `7.broadcast:#xyz`, die alle die Eigenschaft `xyz` von `7` anfragen.
 
 ## Wer ist Sender?
 * Wird nicht innerhalb einer Funktion gesendet, ist der Sender das globale Objekt. Das globale Objekt akzeptiert alle Nachrichten, zeigt
