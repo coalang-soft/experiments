@@ -20,3 +20,9 @@ Rückmeldungen von `receive` können automatisch an das sendende Objekt weiter g
 ## Nachrichten-Objekte
 Objekte können Eigenschaften haben. Es kann sinnvoll sein, Zugriff auf diese Eigenschaften zu haben. Dafür gibt es Nachrichten-Objekte.
 Mit `#abc` hat man ein Nachrichten-Objekt, dass die Eigenschaft `abc` des Empfängers  anfragt.
+
+## Wer ist Sender?
+* Wird nicht innerhalb einer Funktion gesendet, ist der Sender das globale Objekt. Das globale Objekt akzeptiert alle Nachrichten, zeigt
+aber keine Reaktion auf eine Nachricht.
+* Wird innerhalb einer Funktion gesendet, die nicht zu einem Objekt gehört, ist der Sender das globale Objekt.
+* Wird innerhalb einer Funktion gesendet, die zu einem Objekt gehört, ist der Sender dieses Objekt.
