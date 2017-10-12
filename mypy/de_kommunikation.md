@@ -23,7 +23,7 @@ Element, die Reaktion auf `1`. Wenn die 1 nicht akzeptiert wird hat die Ergebnis
 ## Nachrichten-Objekte
 Objekte können Eigenschaften haben. Es kann sinnvoll sein, Zugriff auf diese Eigenschaften zu haben. Dafür gibt es Nachrichten-Objekte.
 Mit `#abc` hat man ein Nachrichten-Objekt, dass die Eigenschaft `abc` des Empfängers  anfragt. 
-Mögliche schreibweisen sind `#xyz>>>7`, `7.xyz` und `7.broadcast:#xyz`, die alle die Eigenschaft `xyz` von `7` anfragen.
+Mögliche schreibweisen sind `#xyz'7`, `7.xyz` und `7.broadcast:#xyz`, die alle die Eigenschaft `xyz` von `7` anfragen.
 
 ## Wer ist Sender?
 * Wird nicht innerhalb einer Funktion gesendet, ist der Sender das globale Objekt. Das globale Objekt akzeptiert alle Nachrichten, zeigt
