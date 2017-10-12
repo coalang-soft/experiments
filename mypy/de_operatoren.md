@@ -7,7 +7,9 @@ Es gibt zwei Arten von Operatoren, die die einen operanden und die die zwei oper
 * `^` hoch
 * `,` verketten / concat
 * `|` oder / größtes
+* `||` oder auf Listen / Ergebnis sind alle Elemente, die in mindestens einer der Operandenlisten vorkommen. `(1,2,3)||(2,3,4)` wäre `1,2,3,4`
 * `&` und / kleinstes
+* `&&` und auf Listen / Ergebnis sind alle Elemente, die in beiden der Operandenlisten vorkommen. `(1,2,3)&&(2,3,4)` wäre `2,3`
 * `%` modulo / rest
 * `<` kleiner als
 * `>` größer als
@@ -16,7 +18,7 @@ Es gibt zwei Arten von Operatoren, die die einen operanden und die die zwei oper
 * `...` Array von...bis
 * `?` Zufällige Einträge aus Array auswählen. `4,7?3` wählt 3 mal einen Eintrag aus (entweder 4 oder 7)
 * ` ` (Leerzeichen) Funktion mit Parameter aufrufen. `3 f` ruft `f` mit dem Parameter `3` auf.
-* `>>>` Nachricht an Objekt senden. `"xy">>>8` sendet die Nachricht `"xy"` an das Objekt `9`.
+* `'` Nachricht an Objekt senden. `"xy"'8` sendet die Nachricht `"xy"` an das Objekt `8`.
 ## Einer-Operatoren
 * `+/` `-/` `*/` `//` usw: Anwenden eines Zweier-Operators für alle Elemente eines Arrays. `1,2,3+/` wäre `6`, `1,2,3,/` wäre weiterhin `1,2,3`.
 * `~-` abrunden / integer-cast
