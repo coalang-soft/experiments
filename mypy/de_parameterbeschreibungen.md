@@ -26,7 +26,7 @@ Ein benannter Parameter mit Bedingung (Name where Bedingung) lässt einen Wert z
 während der Auswertung der Bedingung bereits unter seinem Namen verfügbar.
 ```
 def f
-  a with a<8
+  a where a<8
 ```
 
 WIP
