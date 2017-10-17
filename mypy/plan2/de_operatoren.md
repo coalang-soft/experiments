@@ -25,7 +25,7 @@ Ergebnis bestimmt werden.
 * `~` runden. Mit einer Zahl kleiner 0 als rechter Operator wird abgerundet, bei größer 0 wird aufgerundet, und bei 0 wird aufgerundet
 sobald der "komma-Wert" größer oder gleich `0.5` ist; sonst wird abgerundet.
 
-## Rangfolge und mehrzeilige Ausdrücke
+## Rangfolge und Klammern
 Grundsätzlich werden Operatoren von links nach rechts ausgewertet. `1+2+3` ist also `6`, aber `1+2*3` ist `9`, da `1+2` zuerst ausgewertet wird.
 Eine Ausnahme bilden runde Klammern `()`.
 ```
