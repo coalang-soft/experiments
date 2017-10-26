@@ -16,8 +16,8 @@ Jeder Operator erwartet zwei Operanden.
 * `!` ist nicht gleich
 * `..` Array von...bis
 * `?` Zufällige Einträge aus Array auswählen. `4,7?3` wählt 3 mal einen Eintrag aus (entweder 4 oder 7)
-* `>'` Nachricht (im Falle einer Liste die Liste; links) an Objekt (rechts) senden. `"xy">'8` sendet die Nachricht `"xy"` an das Objekt `8`.
-* `<'` Nachricht (im Falle einer Liste die Liste; rechts) an Objekt senden (links). `"xy"<'8` sendet die Nachricht `8` an das Objekt `"xy"`.
+* `'>` Nachricht (im Falle einer Liste die Liste; links) an Objekt (rechts) senden. `"xy"'>8` sendet die Nachricht `"xy"` an das Objekt `8`.
+* `'<` Nachricht (im Falle einer Liste die Liste; rechts) an Objekt senden (links). `"xy"'<8` sendet die Nachricht `8` an das Objekt `"xy"`.
 * `>>` Nachricht (im Falle einer Liste jedes Element einzeln; links) an Objekt (rechts) senden.
 * `<<` Nachricht (im Falle einer Liste jedes Element einzeln; rechts) an Objekt (links) senden.
 
