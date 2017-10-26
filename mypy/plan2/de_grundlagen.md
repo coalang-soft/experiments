@@ -1,12 +1,8 @@
 ## Grundlagen
 ### Hello World
 ```
-"Hello World"'out
+"Hello World"'>out
 ```
-`>>` sendet einen einzelnen Wert (links) an ein Objekt (rechts).
-Ist der Wert eine Liste, werden ihre Elemente einzeln an das Objekt gesendet.
-`<<` funktioniert gleich, nur dass hier der Wert rechts steht und das empfangende Objekt links.
-`'` hat einen ähnlichen Effekt wie `>>`, nur dass hier im Fall einer Liste die Liste selbst gesendet wird.
 ### Rechnen
 ```
 1+2*3
@@ -26,7 +22,7 @@ Berechnet das Quadrat einer Zahl.
 {
   [toTest true][stuff {[x true] stuff=toTest}] true
   [toTest true][stuff {[x true] toTest%stuff=0}] false
-  [toTest true][stuff true] toTest,(stuff+1)'self
+  [toTest true][stuff true] toTest,(stuff+1)'>self
 }
 ```
 Primzahltester mit allen Parameterbeschreibungen. Vollständige Parameterbeschreibungen sind in `[]` eingefasst, bestehen aus einem Namen,
