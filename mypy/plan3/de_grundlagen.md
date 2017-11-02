@@ -47,5 +47,11 @@ Erstellt eine Funktion mit zwei Parametern, die sie zusammenrechnet und das Erge
 increment 7
 ```
 Erstellt eine Funktion increment, die ihren Parameter um 1 erhöht.
+```
+unknownFunction | 0;
+unknownFunction | 3 [a] 2 [c]
+```
+Bestimmte Funktionen (etwa aus eingebundenen Bibliotheken) können verschieden viele Parameter erwarten. In diesem Fall kann mit `|`
+angegeben werden, welche Version genutzt werden soll. In diesem Beispiel wird die Version mit keinem und drei Parametern verwendet.
 
 WIP
