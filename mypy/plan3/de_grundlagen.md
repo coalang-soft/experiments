@@ -42,5 +42,10 @@ Erstellt eine Funktion mit Parameter x, die ihren Parameter ausgibt.
 sampleStuff 4 7
 ```
 Erstellt eine Funktion mit zwei Parametern, die sie zusammenrechnet und das Ergebnis ausgibt. Diese Funktion wird unter dem Namen `sampleStuff` gespeichert und mit den Parametern `4` und `7` aufgerufen.
+```
+[1 +] ! : [increment];
+increment 7
+```
+Erstellt eine Funktion increment, die ihren Parameter um 1 erhöht.
 
 WIP
