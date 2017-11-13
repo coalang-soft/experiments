@@ -9,3 +9,6 @@ Problem: Was, wenn wir eine Funktion in eine Variable speichern wollen? Das ging
 ```
 Das lässt sich nicht gut in weiteren Code einbauen, und wenn man die "normale" Variante `value : [name]` nutzt, müsste man ständig
 aufpassen, dass `value` keine Funktion ist - daher ist `:` ein Spezialzeichen und bedeutet immer "Variable mit Wert erstellen".
+
+## Semikolon ;
+Da das Semikolon Codestücke bzw. Strings von einander trennt, kann es nicht als Wert oder Variablenname genutzt werden.
