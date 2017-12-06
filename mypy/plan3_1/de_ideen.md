@@ -25,28 +25,9 @@ Das bedeutet: Hunde und Katzen werden als Tiere angesehen - aber nur, weil wir e
 nicht von Tier erben lassen, werden sie nicht mehr als Tiere angesehen. Das ist genau umgekehrt zu dem, wie man normalerweise etwas
 definieren würde:
 ```
-Es ist ein Tier, also lebt es und ist keine Pflanze.
-Es lebt und ist keine Pflanze, also ist es ein Tier (schon klar, nicht ganz treffend).
+A ist ein Tier, also lebt es und ist keine Pflanze.
+B lebt und ist keine Pflanze, also ist es ein Tier (schon klar, nicht ganz treffend).
 ```
 
-Als Code könnte der Unterschied so aussehen:
-```
-//Es ist ein Tier
-Tier {
-  lives:true //also lebt es
-  isPlant:false //und ist keine Pflanze.
-}
-
-Object o = {
-  lives:true //Es lebt
-  isPlant:false //und ist keine Pflanze,
-} //also ist es ein Tier
-
-Tier[] tiere := [new Tier, o]
-```
-
-Die Sprache könnte also erkennen, dass `o` ein Tier ist, obwohl wir es nicht extra angegeben haben. Datentypen funktionieren hier also
+Die Sprache könnte also erkennen, dass `B` ein Tier ist, obwohl wir es nicht extra angegeben haben. Datentypen funktionieren hier also
 eher wie Vorlagen, mit denen ein Objekt geprüft wird wenn ein bestimmter Typ erwartet wird.
-
-## 3
-WIP
