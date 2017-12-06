@@ -1,3 +1,4 @@
+## 1
 Es kommt relativ oft vor, dass ein Programm von der Syntax her zwar stimmt, aber dennoch irgendwas nicht funktioniert.
 Beispiele hierfür sind nicht erstellte Variablen, oder das Senden einer Nachricht an ein Objekt, welches sie nicht versteht.
 
@@ -9,5 +10,23 @@ Text, um das Programm lesbarer zu halten - schließlich braucht es in diesem Fal
 Natürlich können nicht all diese Verhaltensweisen standardmäßig zutreffen, denn das funktioniert immer nur für eine Verhaltensweise.
 Eine Variable kann nicht gleichzeitig ein leeres Array und ihr eigener Name zugewiesen sein.
 Was aber eine Möglichkeit ist: Einen Weg einbauen, über den der Programmierer diese Verhaltensweisen selbst setzen und ändern kann.
+
+## 2
+Datentypen anzugeben kann durchaus sinnvoll sein. Durch sie weiß man sicher, welche Nachrichten ein Objekt versteht. 
+Allerdings wirken Datentypen in vielen Sprachen auch einschränkend. Angenommen wir haben folgende Datentypen (`<` steht hier für "erbt von"):
+```
+Hund < Tier < Object
+Katze < Tier < Object
+
+Tier[] tiere := [new Hund, new Katze];
+```
+
+Das bedeutet: Hunde und Katzen werden als Tiere angesehen - aber nur, weil wir es quasi dran geschrieben haben. Wenn wir Hund und Katze
+nicht von Tier erben lassen, werden sie nicht mehr als Tiere angesehen. Das ist genau umgekehrt zu dem, wie man normalerweise etwas
+definieren würde:
+
+```
+Es lebt und ist keine Pflanze, also ist es ein Tier (schon klar, nicht ganz treffend).
+```
 
 WIP
