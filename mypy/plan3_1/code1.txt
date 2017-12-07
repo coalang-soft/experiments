@@ -1,0 +1,7 @@
+$Point2D := type(Map<Map<Type,String>, Function<Object>> -> "template") -> (
+  (Function<Int> -> "x") -> (() -> "x"),
+  (Function<Int> -> "y") -> (() -> "y")
+)
+Point2D addProperty: (Function<Int> -> "print") -> ((self) -> "out: (self.x & ' ' & self.y)")
+
+$p := Point2D: ("x" -> 5, "y" -> 6)
